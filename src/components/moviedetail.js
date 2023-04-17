@@ -10,7 +10,8 @@ class MovieDetail extends Component {
     componentDidMount() {
         const {dispatch} = this.props;
         if (this.props.selectedMovie == null) {
-            dispatch(fetchMovie(this.props.movieId));
+            dispatch(fetchMovie(this.props.title));
+            //dispatch(fetchMovie(this.props.movieId));
         }
     }
 
