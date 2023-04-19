@@ -6,7 +6,7 @@ import {Image, Nav} from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 import { BsStarFill} from 'react-icons/bs'
 import {LinkContainer} from 'react-router-bootstrap';
-/*
+
 class MovieList extends Component {
     constructor(props) {
         super(props);
@@ -66,23 +66,5 @@ const mapStateToProps = state => {
         movies: state.movie.movies
     }
 }
-*/
-
-import React from 'react';
-
-const MovieList = (props) => {
-    return (
-        <>
-            {props.movies.map((movie, index) => (
-                <div className='image-container d-flex justify-content-start m-3'>
-                    <img src={movie.Poster} alt='movie'></img>
-                </div>
-            ))}
-        </>
-    );
-};
-
-export default MovieList;
-
-//export default connect(mapStateToProps)(MovieList);
+export default connect(mapStateToProps)(MovieList);
 
