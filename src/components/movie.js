@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { fetchMovie } from "../actions/movieActions";
@@ -18,6 +18,7 @@ import {
 import { Image } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
 import {connect} from "react-redux";
+import React, { Component }  from 'react';
 // support routing
 class Movie extends Component {
 
