@@ -1,4 +1,3 @@
-/*
 import React, { Component } from 'react';
 import { fetchMovie } from "../actions/movieActions";
 import {connect} from 'react-redux';
@@ -39,7 +38,7 @@ class MovieDetail extends Component {
                         <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.averageRating}</h4></ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                        {this.props.selectedMovie.reviews.map((review, i) =>
+                        {this.props.selectedMovie.Reviews.map((review, i) =>
                             <p key={i}>
                                 <b>{review.username}</b>&nbsp; {review.Review}
                                 &nbsp;  <BsStarFill /> {review.Rating}
@@ -63,4 +62,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(MovieDetail);
-*/
