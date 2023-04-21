@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import { fetchMovie } from "../actions/movieActions";
 import {connect} from 'react-redux';
@@ -62,4 +63,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(MovieDetail);
-
+*/
