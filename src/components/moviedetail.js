@@ -28,7 +28,7 @@ class MovieDetail extends Component {
                         <Image className="image" src={this.props.selectedMovie.ImageUrl} thumbnail />
                     </Card.Body>
                     <ListGroup>
-                        <ListGroupItem>{this.props.selectedMovie._id}</ListGroupItem>
+                        <ListGroupItem>{this.props.selectedMovie.Title}</ListGroupItem>
                         <ListGroupItem>
                             {this.props.selectedMovie.actors.map((actor, i) =>
                                 <p key={i}>
