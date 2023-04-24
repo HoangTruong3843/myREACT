@@ -1,33 +1,11 @@
 import React, { Component } from 'react';
 import { fetchMovie } from "../actions/movieActions";
 import {connect} from 'react-redux';
-import {Card,
-    ListGroup,
-    ListGroupItem,
-    Glyphicon,
-    Panel,
-    Form,
-    FormGroup,
-    Col,
-    ControlLabel,
-    FormControl, Button,} from 'react-bootstrap';
+import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
-const env = process.env;
 
 class MovieDetail extends Component {
-    constructor(props) {
-        super(props);
-        this.updateDetails = this.updateDetails.bind(this);
-        this.reviewSub = this.reviewSub.bind(this);
-
-        this.state = {
-            details:{
-                review: '',
-                rating: 0
-            }
-        };
-    }
 
     componentDidMount() {
         const {dispatch} = this.props;
@@ -37,64 +15,7 @@ class MovieDetail extends Component {
         }
     }
 
-    updateDetails(event){
-        let updateDetails = Object.assign({}, this.state.details);
-
-        updateDetails[event.target.id] = event.target.value;
-        this.setState({
-            details: updateDetails
-        });
-    }
-
-    reviewSub() {
-        //const env = runtimeEnv();
-
-        var json = {
-            Review: this.state.details.review,
-            Rating: this.state.details.rating,
-            Movie_ID: this.props.movieId
-        };
-
-        return fetch(`${env.REACT_APP_API_URL}/reviews`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
-            },
-            body: JSON.stringify(json),
-            mode: 'cors'})
-            .then( (response) => {
-                if (!response.ok) {
-                    throw Error(response.statusText);
-                }
-                return response.json();
-            })
-            .then( (res) => {
-                window.location.reload();
-            })
-            .catch( (e) => console.log(e) );
-
-    }
-
     render() {
-        const ActorInfo = ({Actors}) => {
-            return Actors.map((actor, i) =>
-                <p key={i}>
-                    <b>{actor.ActorName}</b> {actor.CharacterName}
-                </p>
-            );
-        };
-
-        const ReviewInfo = ({Reviews}) => {
-            return Reviews.map((review, i) =>
-                <p key={i}>
-                    <b>{review.Name}</b> {review.Review}
-                    <Glyphicon glyph={'star'} /> {review.Rating}
-                </p>
-            );
-        };
-
         const DetailInfo = () => {
             if (!this.props.selectedMovie) {
                 return <div>Loading....</div>
@@ -134,10 +55,9 @@ class MovieDetail extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
     return {
-        selectedMovie: state.movie.selectedMovie,
-        movieId: ownProps.match.params.movieId
+        selectedMovie: state.movie.selectedMovie
     }
 }
 
