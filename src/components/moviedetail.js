@@ -79,30 +79,33 @@ class MovieDetail extends Component {
         const ReviewInfo = ({Reviews}) => {
             return Reviews.map((review, i) =>
                 <p key={i}>
-                    <b>{review.Name}</b> {review.Review}
-                    <Glyphicon glyph={'star'} /> {review.Rating}
+                    <b>{review.Name}</b>&nbsp; {review.Review}
+                    &nbsp;  <BsStarFill /> {review.Rating}
                 </p>
             );
         };
 
         const DetailInfo = ({currentMovie}) => {
-            if (!currentMovie) { // evaluates to true if currentMovie is null
-                return <div>Loading...</div>;
+            if (!currentMovie) {
+                return <div>Loading....</div>
             }
             return (
-                <Panel>
-                    <Panel.Heading>Movie Detail</Panel.Heading>
-                    <Panel.Body><Image className="image" src={currentMovie.ImageURI} thumbnail /></Panel.Body>
+                <Card>
+                    <Card.Header>Movie Detail</Card.Header>
+                    <Card.Body>
+                        <Image className="image" src={this.props.selectedMovie.ImageUrl} thumbnail />
+                    </Card.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.Title}</ListGroupItem>
-                        <ListGroupItem><ActorInfo Actors={currentMovie.Actors} /></ListGroupItem>
-                        <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.averageRating} </h4></ListGroupItem>
+                        <ListGroupItem><ActorInfo Actors={currentMovie.Actors}/>
+                        </ListGroupItem>
+                        <ListGroupItem><h4><BsStarFill/> {currentMovie.averageRating}</h4></ListGroupItem>
                     </ListGroup>
-                    <Panel.Body><ReviewInfo Reviews={currentMovie.Reviews} /></Panel.Body>
-
-                </Panel>
-            );
-        };
+                    <Card.Body><ReviewInfo Reviews = {currentMovie.Reviews}/>
+                    </Card.Body>
+                </Card>
+            )
+        }
 
         return (
             <div>
