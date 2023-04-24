@@ -108,7 +108,7 @@ class MovieDetail extends Component {
 
         return (
             <div>
-                <DetailInfo {this.props.selectedMovie} />
+                <DetailInfo currentMovie = {this.props.selectedMovie} />
                 <Form horizontal>
                     <FormGroup controlId = "review">
                         <Col componentClass={FormLabel} sm={2}>
