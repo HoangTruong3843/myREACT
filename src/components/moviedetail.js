@@ -16,7 +16,7 @@ import { Image } from 'react-bootstrap'
 import {fetchMovie} from "../actions/movieActions";
 //import runtimeEnv from "@mars/heroku-js-runtime-env";
 const env = process.env;
-class Movie extends Component {
+class MovieDetail extends Component {
 
     constructor(props) {
         super(props);
