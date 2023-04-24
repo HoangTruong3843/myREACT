@@ -70,7 +70,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### Submission
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25408364-8cfa776d-5d78-46cf-ac74-1bd2c023e8a7?action=collection%2Ffork&collection-url=entityId%3D25408364-8cfa776d-5d78-46cf-ac74-1bd2c023e8a7%26entityType%3Dcollection%26workspaceId%3De2239a59-d0c8-4491-ae61-e4c19ce78126)
-
-### React Link
+#### REACT Link
 https://csc3916-react-lb5a.onrender.com
