@@ -45,7 +45,7 @@ class MovieDetail extends Component {
             Movie_ID: this.props.movieId
         };
 
-        return fetch(`${env.REACT_APP_API_URL}/movies?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?reviews=true`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
