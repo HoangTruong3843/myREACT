@@ -36,7 +36,7 @@ class MovieDetail extends Component {
         });
     }
 
-    reviewSub() {
+    reviewSub(movieId) {
         //const env = runtimeEnv();
 
         var json = {
