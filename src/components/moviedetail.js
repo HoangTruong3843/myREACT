@@ -72,7 +72,6 @@ class MovieDetail extends Component {
             if (!this.props.selectedMovie) {
                 return <div>Loading....</div>
             }
-
             return (
                 <Card>
                     <Card.Header>Movie Detail</Card.Header>
@@ -136,10 +135,9 @@ class MovieDetail extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
     return {
         selectedMovie: state.movie.selectedMovie,
-        movieId: ownProps.match.params.movieId
     }
 }
 
