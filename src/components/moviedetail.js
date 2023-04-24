@@ -102,8 +102,38 @@ class MovieDetail extends Component {
         }
 
         return (
-            <DetailInfo />
-        )
+            <div>
+                <DetailInfo {this.props.selectedMovie} />
+                <Form horizontal>
+                    <FormGroup controlId = "review">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Review
+                        </Col>
+                        <Col sm={10}>
+                            <FormControl onChange={this.updateDetails} value={this.state.details.review} type="text" placeholder="type review here..." />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup controlId="rating">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Rating
+                        </Col>
+                        <Col sm={10}>
+                            <FormControl onChange={this.updateDetails}
+                                         value={this.state.details.rating}
+                                         type="number" min="1" max="5" />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Button onClick={this.reviewSub}>Submit</Button>
+                        </Col>
+                    </FormGroup>
+                </Form>
+
+            </div>
+        );
     }
 }
 
