@@ -42,8 +42,6 @@ class MovieDetail extends Component {
         var json = {
             Review: this.state.details.review,
             Rating: this.state.details.rating,
-            //
-            ImageUrl: this.state.details.ImageUrl,
             Movie_ID: this.props.movieId
         };
 
@@ -83,7 +81,7 @@ class MovieDetail extends Component {
                     <ListGroup>
                         <ListGroupItem>{this.props.selectedMovie.Title}</ListGroupItem>
                         <ListGroupItem>
-                            {this.props.selectedMovie.actors.map((actor, i) =>
+                            {this.props.selectedMovie.Actors.map((actor, i) =>
                                 <p key={i}>
                                     <b>{actor.ActorName}</b> {actor.CharacterName}
                                 </p>)}
@@ -91,7 +89,7 @@ class MovieDetail extends Component {
                         <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.averageRating}</h4></ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                        {this.props.selectedMovie.reviews.map((review, i) =>
+                        {this.props.selectedMovie.Reviews.map((review, i) =>
                             <p key={i}>
                                 <b>{review.username}</b>&nbsp; {review.Review}
                                 &nbsp;  <BsStarFill /> {review.Rating}
