@@ -42,6 +42,8 @@ class MovieDetail extends Component {
         var json = {
             Review: this.state.details.review,
             Rating: this.state.details.rating,
+            //
+            ImageUrl: this.state.details.ImageUrl,
             Movie_ID: this.props.movieId
         };
 
