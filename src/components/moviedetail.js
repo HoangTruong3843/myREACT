@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { fetchMovie } from "../actions/movieActions";
 import {connect} from 'react-redux';
-import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import {Card,
+    ListGroup,
+    ListGroupItem,
+    Glyphicon,
+    Panel,
+    Form,
+    FormGroup,
+    Col,
+    ControlLabel,
+    FormControl, Button,} from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
+const env = process.env;
 
 class MovieDetail extends Component {
     constructor(props) {
@@ -37,7 +47,7 @@ class MovieDetail extends Component {
     }
 
     reviewSub() {
-        const env = runtimeEnv();
+        //const env = runtimeEnv();
 
         var json = {
             Review: this.state.details.review,
