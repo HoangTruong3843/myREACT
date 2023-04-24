@@ -12,11 +12,11 @@ import {
     FormControl, Button,
 } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
-//import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import {fetchMovie} from "../actions/movieActions";
 //import runtimeEnv from "@mars/heroku-js-runtime-env";
 const env = process.env;
-class MovieDetail extends Component {
+class Movie extends Component {
 
     constructor(props) {
         super(props);
@@ -157,4 +157,4 @@ const mapStateToProps = (state, ownProps) => {
         movieId: ownProps.match.params.movieId
     }
 }
-export default connect(mapStateToProps)(MovieDetail);
+export default withRouter(connect(mapStateToProps)(Movie));
