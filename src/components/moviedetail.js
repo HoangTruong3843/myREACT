@@ -12,10 +12,10 @@ import {
     FormControl, Button,
 } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
-import { withRouter } from "react-router-dom";
+//import { withRouter } from "react-router-dom";
 import {fetchMovie} from "../actions/movieActions";
-import runtimeEnv from "@mars/heroku-js-runtime-env";
-
+//import runtimeEnv from "@mars/heroku-js-runtime-env";
+const env = process.env;
 class Movie extends Component {
 
     constructor(props) {
@@ -47,7 +47,7 @@ class Movie extends Component {
     }
 
     reviewSub() {
-        const env = runtimeEnv();
+        //const env = runtimeEnv();
 
         var json = {
             Review: this.state.details.review,
@@ -157,4 +157,4 @@ const mapStateToProps = (state, ownProps) => {
         movieId: ownProps.match.params.movieId
     }
 }
-export default withRouter(connect(mapStateToProps)(MovieDetail));
+export default connect(mapStateToProps)(MovieDetail);
