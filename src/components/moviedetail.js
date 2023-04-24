@@ -36,7 +36,7 @@ class MovieDetail extends Component {
         });
     }
 
-    reviewSub(movieId) {
+    reviewSub() {
         //const env = runtimeEnv();
 
         var json = {
@@ -45,7 +45,7 @@ class MovieDetail extends Component {
             Movie_ID: this.props.movieId
         };
 
-        return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/reviews`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
