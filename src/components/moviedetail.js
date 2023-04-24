@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { fetchMovie } from "../actions/movieActions";
 import {connect} from 'react-redux';
-import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import {Card, ListGroup, ListGroupItem,
+    Form,
+    FormGroup,
+    Col,
+    FormLabel,
+    FormControl, Button } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
 const env = process.env;
@@ -106,7 +111,7 @@ class MovieDetail extends Component {
                 <DetailInfo {this.props.selectedMovie} />
                 <Form horizontal>
                     <FormGroup controlId = "review">
-                        <Col componentClass={ControlLabel} sm={2}>
+                        <Col componentClass={FormLabel} sm={2}>
                             Review
                         </Col>
                         <Col sm={10}>
@@ -115,7 +120,7 @@ class MovieDetail extends Component {
                     </FormGroup>
 
                     <FormGroup controlId="rating">
-                        <Col componentClass={ControlLabel} sm={2}>
+                        <Col componentClass={FormLabel} sm={2}>
                             Rating
                         </Col>
                         <Col sm={10}>
