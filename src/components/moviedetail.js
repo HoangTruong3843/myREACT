@@ -4,8 +4,20 @@ import {connect} from 'react-redux';
 import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
-
+const env = process.env;
 class MovieDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.updateDetails = this.updateDetails.bind(this);
+        this.reviewSub = this.reviewSub.bind(this);
+
+        this.state = {
+            details:{
+                review: '',
+                rating: 0
+            }
+        };
+    }
 
     componentDidMount() {
         const {dispatch} = this.props;
@@ -13,6 +25,46 @@ class MovieDetail extends Component {
             dispatch(fetchMovie(this.props.movieId));
 
         }
+    }
+
+    updateDetails(event){
+        let updateDetails = Object.assign({}, this.state.details);
+
+        updateDetails[event.target.id] = event.target.value;
+        this.setState({
+            details: updateDetails
+        });
+    }
+
+    reviewSub() {
+        //const env = runtimeEnv();
+
+        var json = {
+            Review: this.state.details.review,
+            Rating: this.state.details.rating,
+            Movie_ID: this.props.movieId
+        };
+
+        return fetch(`${env.REACT_APP_API_URL}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            body: JSON.stringify(json),
+            mode: 'cors'})
+            .then( (response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then( (res) => {
+                window.location.reload();
+            })
+            .catch( (e) => console.log(e) );
+
     }
 
     render() {
