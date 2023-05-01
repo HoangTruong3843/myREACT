@@ -8,6 +8,7 @@
     "@mars/heroku-js-runtime-env": "^3.0.2",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.2",
+    "@react-spring/web": "^9.7.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
