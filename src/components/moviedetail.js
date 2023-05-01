@@ -74,7 +74,7 @@ class MovieDetail extends Component {
             }
             return (
                 <Card>
-                    <Card.Header>Movie Detail</Card.Header>
+                    <Card.Header>Movie WHAT IS THISSSS Detail</Card.Header>
                     <Card.Body>
                         <Image className="image" src={this.props.selectedMovie.ImageUrl} thumbnail />
                     </Card.Body>
