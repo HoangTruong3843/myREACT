@@ -86,7 +86,7 @@ class MovieDetail extends Component {
                                     <b>{actor.ActorName}</b> {actor.CharacterName}
                                 </p>)}
                         </ListGroupItem>
-                        <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.averageRating}</h4></ListGroupItem>
+                        <ListGroupItem><h4><BsStarFill/><BsStarFill/> {this.props.selectedMovie.averageRating}</h4></ListGroupItem>
                     </ListGroup>
                     <Card.Body>
                         {this.props.selectedMovie.reviews.map((review, i) =>
